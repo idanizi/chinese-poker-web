@@ -1,12 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.scss';
+import styles from './App.module.scss';
 import _config from './config';
-import apisauce from 'apisauce';
-
-const api = apisauce.create({
-  baseURL: '',
-});
+import api from './helpers/api';
 
 const config = _config.get('app');
 
@@ -14,7 +9,7 @@ function App() {
   const [res, setRes]: [any, any] = React.useState('');
 
   React.useEffect(() => {
-    api.get('/api').then((res) => {
+    api.get('/').then((res) => {
       if (res.ok) {
         setRes(res.data);
       }
@@ -22,7 +17,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className={styles.app}>
       {config.test}
       <div>{'res: ' + res}</div>
     </div>
