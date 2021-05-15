@@ -29,6 +29,7 @@
     "config": "^3.3.6",
     "dotenv-flow": "^3.2.0",
     "morgan": "^1.10.0",
+    "pokersolver": "^2.1.4",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.3",
