@@ -1,6 +1,8 @@
 import React, { CSSProperties } from 'react'
 import url from 'src/helpers/url'
 import {cardTypes} from '../../interfaces/cards'
+import classnames from 'classnames'
+import styles from './Card.module.scss';
 
 type CardPropTypes = {
     name: keyof typeof cardTypes | string, 
@@ -10,7 +12,7 @@ type CardPropTypes = {
 
 const Card = ({name, className, style}: CardPropTypes) => {
     return (
-        <div {...{className, style}}>
+        <div style={style} className={classnames(styles.card, className)}>
             <img src={url.getCardImageSource(name)} />
         </div>
     )

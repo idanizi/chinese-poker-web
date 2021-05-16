@@ -13,7 +13,7 @@ const Hand = ({ cards }: HandPropTypes) => {
             {
                 cards.map((name: string, idx: number) => {
                     return (
-                        <Card key={idx} name={name} style={{transform: `translateY(${idx * (-15)}em)`}}/>
+                        <Card key={idx} name={name} /* style={{marginTop: `${idx === 0 ? 0 :(-10)}%`}} *//>
                     )
                 })
             }

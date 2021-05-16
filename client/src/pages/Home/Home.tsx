@@ -6,7 +6,8 @@ const Home = () => {
 
   return (
     <section>
-      <Player />
+      <Player playerIndex={1} />
+      <Player playerIndex={2} isCurrentPlayer />
     </section>
   );
 }

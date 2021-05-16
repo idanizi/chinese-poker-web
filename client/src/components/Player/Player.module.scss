@@ -1,0 +1,13 @@
+.player {
+ 
+}
+.hands {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2vw;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}

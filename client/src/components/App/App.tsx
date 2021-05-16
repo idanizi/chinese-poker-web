@@ -6,7 +6,9 @@ export default function App({ children }) {
         <main className="App">
             <header>
                 <nav>
-                    todo: navbar
+                    <h1>
+                        Talia's Chinese Poker
+                    </h1>
                 </nav>
             </header>
             <section>
