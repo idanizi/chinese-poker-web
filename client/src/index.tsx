@@ -1,15 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './styles/index.css';
 import reportWebVitals from './reportWebVitals';
-import ErrorBoundary from './components/ErrorBoundary';
+import Root from './components/Root';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ErrorBoundary>
-      <App />
-    </ErrorBoundary>
+    <Root />
   </React.StrictMode>,
   document.getElementById('root'),
 );
