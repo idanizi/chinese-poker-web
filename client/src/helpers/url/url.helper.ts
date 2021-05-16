@@ -31,5 +31,5 @@ export function getCardImageSource(cardName: string): string {
 
     filename = `${parseLevel(level)}_of_${parseShape(shape)}`
 
-    return buildImgSrc(`cards/${filename}.svg`)
+    return buildImgSrc(`/cards/${filename}.svg`)
 }

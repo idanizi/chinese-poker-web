@@ -3,6 +3,7 @@ import styles from './App.module.scss';
 import _config from './config';
 import api from './helpers/api';
 import url from './helpers/url';
+import { cardTypes } from './interfaces/cards';
 
 const config = _config.get('app');
 
@@ -21,7 +22,7 @@ function App() {
     <div className={styles.app}>
       {config.test}
       <div>{'res: ' + res}</div>
-      <img src={url.buildImgSrc('/cards/2_of_clubs.svg')} alt="" />
+      <img src={url.getCardImageSource(cardTypes['5h'])} alt="" />
     </div>
   );
 }
