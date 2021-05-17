@@ -12,6 +12,7 @@ const hands = [
 ]
 
 function Player({playerIndex, isCurrentPlayer = false}) {
+    
     return (
         <section className={styles.player}>
             <header>
