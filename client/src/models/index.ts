@@ -19,6 +19,4 @@ export type GetState = () => StoreStateType
 
 export type ActionCreator<T = any> = (payload?: T) => FluxActionType<T>
 
-export type ThunkCreator<T = any> =
-    ((payload: T) => (dispatch: Dispatch, getState: GetState) => void)
-    | ((...payload: any[]) => (dispatch: Dispatch, getState: GetState) => any)
+export type ThunkCreator = (...payload: any[]) => (dispatch: Dispatch, getState: GetState) => any

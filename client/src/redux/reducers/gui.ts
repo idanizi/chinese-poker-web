@@ -6,7 +6,7 @@ const initialState: Gui = {
     loading: false,
 }
 
-const guiReducer = (state = initialState, action: FluxActionType<any>) =>
+const guiReducer = (state = initialState, action: FluxActionType) =>
     produce(state, draft => {
         switch (action.type) {
 
