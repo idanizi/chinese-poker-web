@@ -8,7 +8,7 @@ export const REMOVE_CARD_FROM_DECK = 'REMOVE_CARD_FROM_DECK'
 
 //#region payload types
 export type AddCardPayloadType = {
-    cardName: string | keyof typeof cardTypes,
+    cardName?: string | keyof typeof cardTypes,
     handIndex: number,
     isCurrentPlayer: boolean,
 }
@@ -24,7 +24,12 @@ export const removeOneCardFromDeck: ActionCreator = () => ({
     type: REMOVE_CARD_FROM_DECK,
 })
 
-export const moveCardFromDeckToHand: ThunkCreator = (payload: AddCardPayloadType) => (dispatch) => {
+export const moveCardFromDeckToHand: ThunkCreator<AddCardPayloadType> = (payload) => (dispatch, getState) => {
+    if (!payload.cardName) {
+        const { deck } = getState().cards
+        if (deck.length === 0) return;
+        payload.cardName = getState().cards.deck[0];
+    }
     dispatch(addCardToHand(payload))
     dispatch(removeOneCardFromDeck())
 }

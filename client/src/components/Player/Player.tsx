@@ -2,17 +2,12 @@ import React from 'react'
 import Hand from '../Hand/Hand'
 import styles from './Player.module.scss'
 import classnames from 'classnames'
+import { useSelector } from 'react-redux'
+import { Cards, StoreStateType } from 'src/models'
 
-const hands = [
-    ["Ad", "As", "Jc", "Th", "2d",],
-    ["Ad", "As", "Jc", "Th", "2d",],
-    ["Ad", "As", "Jc", "Th", "2d",],
-    ["Ad", "As", "Jc", "Th", "2d",],
-    ["Ad", "As", "Jc", "Th", "2d",],
-]
-
-function Player({playerIndex, isCurrentPlayer = false}) {
-    
+function Player({ playerIndex, isCurrentPlayer = false }) {
+    const cardsState = useSelector<StoreStateType, Cards>(state => state.cards)
+    const hands = isCurrentPlayer ? cardsState.currentPlayer.hands : cardsState.oppositePlayer.hands;
     return (
         <section className={styles.player}>
             <header>
@@ -24,7 +19,7 @@ function Player({playerIndex, isCurrentPlayer = false}) {
                 {
                     hands.map((cards, idx) => {
                         return (
-                            <Hand cards={cards} />
+                            <Hand key={idx} cards={cards} isCurrentPlayer={isCurrentPlayer} handIndex={idx} />
                         )
                     })
                 }
