@@ -1,6 +1,16 @@
 .card {
+    width: fit-content;
+    height: fit-content;
     img {
-        width: 13vw;
+        width: 7vw;
         height: auto;
     }
+}
+
+.placeholder {
+    img {
+        visibility: hidden;
+    }
+    border: 1px solid black;
+    border-radius: 8px;
 }

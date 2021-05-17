@@ -1,13 +1,14 @@
 .player {
- 
+ text-align: left;
 }
 .hands {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    column-gap: 2vw;
+    column-gap: 3vw;
 }
 
 .rotate {
     transform: rotate(180deg);
+    justify-content: flex-end;
 }

@@ -1,9 +1,11 @@
-import React from 'react'
+import Card from 'src/components/Card'
+import styles from './Deck.module.scss'
 
 const Deck = () => {
     return (
-        <div>
-            
+        <div className={styles.deck}>
+            <h3>Deck</h3>
+            <Card />
         </div>
     )
 }

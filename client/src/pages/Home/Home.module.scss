@@ -1,0 +1,23 @@
+section.board {
+  text-align: center;
+  display: grid;
+  grid-template:
+    "aside article"1fr "aside article"1fr /0.3fr 1fr;
+  
+  aside {
+    grid-area: aside;
+  }
+
+  article {
+    grid-area: article;
+  }
+}
+
+section.board {
+  aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
