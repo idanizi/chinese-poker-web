@@ -1,15 +1,13 @@
-import {Dispatch} from 'redux'
-import { userInfo } from 'os'
-import { gunzip } from 'zlib'
+import { Dispatch } from 'redux'
 
 export type FluxActionType<T = any> = {
     type: string,
-    payload: T,
+    payload?: T,
     meta?: any,
     error?: Error,
 }
 
-export interface Gui{
+export interface Gui {
     loading: boolean;
 }
 
@@ -19,6 +17,8 @@ export type StoreStateType = {
 
 export type GetState = () => StoreStateType
 
-export type ActionCreator<T> = (payload: T) => FluxActionType<T>
+export type ActionCreator<T = any> = (payload?: T) => FluxActionType<T>
 
-export type ThunkCreator<T> = (payload: T) => (dispatch: Dispatch, getState: GetState) => void
+export type ThunkCreator<T = any> =
+    ((payload: T) => (dispatch: Dispatch, getState: GetState) => void)
+    | ((...payload: any[]) => (dispatch: Dispatch, getState: GetState) => any)
