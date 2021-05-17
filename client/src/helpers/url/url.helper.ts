@@ -21,15 +21,19 @@ function parseShape(shape: string): string {
         case 's': return 'spades';
         case 'h': return 'hearts';
         case 'c': return 'clubs';
-        default: throw new Error(`[${__filename}] [parseShape] unrecognized shape: ${shape}`)
     }
 }
 
-export function getCardImageSource(cardName: string): string {
+function parseFilename(cardName: string): string {
+    if (cardName.length > 2) {
+        return cardName;
+    }
     const [level, shape,] = cardName.split('');
-    let filename = 'red_joker';
+    const parsedShape = parseShape(shape)
+    if (parsedShape == null) return 'back'
+    return `${parseLevel(level)}_of_${parsedShape}`
+}
 
-    filename = `${parseLevel(level)}_of_${parseShape(shape)}`
-
-    return buildImgSrc(`/cards/${filename}.svg`)
+export function getCardImageSource(cardName: string): string {
+    return buildImgSrc(`/cards/${parseFilename(cardName)}.svg`)
 }

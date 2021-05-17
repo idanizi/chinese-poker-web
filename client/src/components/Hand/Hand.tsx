@@ -10,7 +10,7 @@ type HandPropTypes = {
 }
 
 const Hand = ({ cards, isCurrentPlayer = false, handIndex }: HandPropTypes) => {
-   
+
     return (
         <section className={styles.hand}>
             {
@@ -19,7 +19,7 @@ const Hand = ({ cards, isCurrentPlayer = false, handIndex }: HandPropTypes) => {
                     :
                     cards.map((name: string, idx: number) => {
                         return (
-                            <Card key={idx} name={name} handIndex={handIndex} isCurrentPlayer={isCurrentPlayer} />
+                            <Card key={idx} name={name} handIndex={handIndex} isCurrentPlayer={isCurrentPlayer} isDraggable />
                         )
                     })
             }
